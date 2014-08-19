@@ -2,10 +2,10 @@
 from setuptools import setup, find_packages
 
 install_requires = [
-    
+    'mock',
 ]
 dependency_links = [
-    
+
 ]
 
 if __name__ == '__main__':
@@ -17,6 +17,6 @@ if __name__ == '__main__':
           dependency_links=dependency_links,
           include_package_data=True,
           entry_points="""\
-          
+
           """,
           )
