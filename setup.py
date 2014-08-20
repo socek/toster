@@ -9,7 +9,8 @@ dependency_links = [
 ]
 
 if __name__ == '__main__':
-    setup(name='Testosteron',
+    setup(name='Toster',
+          description='unittest wrapper with ready to configure command line',
           version='0.1',
           packages=find_packages('src'),
           package_dir={'': 'src'},
