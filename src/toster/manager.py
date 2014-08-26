@@ -3,14 +3,21 @@ from importlib import import_module
 
 class TestManager(object):
 
-    def __init__(self):
+    def __init__(self, runner):
         self.tests = {}
         self.groups = {}
+        self.runner = runner
+
+    def add_testcases(self, testcases):
+        for testcase in testcases:
+            self.add_testcase(testcase)
 
     def add_testcase(self, testcase):
         testcase = self.maybe_dotted(testcase)
         key = testcase.__module__ + ':' + testcase.__name__
         self.tests[key] = testcase
+
+        testcase.runner = self.runner
 
         for name in testcase.groups:
             group = self.groups.get(name, [])

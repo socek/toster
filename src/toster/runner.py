@@ -1,11 +1,13 @@
 from argparse import ArgumentParser
 import unittest
 
+from .manager import TestManager
+
 
 class TestRunner(object):
 
-    def __init__(self, manager):
-        self.manager = manager
+    def __init__(self):
+        self.manager = TestManager(self)
         self.loader = unittest.TestLoader()
         self.verbosity = 1
         self.args = None
